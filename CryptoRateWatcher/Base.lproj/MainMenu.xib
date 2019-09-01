@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="CryptoRate" customModuleProvider="target"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <menu id="bJB-rU-VDw">
+            <items>
+                <menuItem title="Update" id="ZJq-vC-Wgp">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="updateAction:" target="koa-pB-eFf" id="2ne-0Y-dQr"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="History" id="3Td-Yi-SWB">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="showHistory:" target="koa-pB-eFf" id="c4e-gr-MzN"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="Qyk-EC-JQc"/>
+                <menuItem title="Price" id="WX9-fY-pON">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="BLp-uZ-uT8"/>
+                <menuItem title="About" id="7gb-7D-V8z">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="aboutAction:" target="koa-pB-eFf" id="7pN-B5-sYs"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Quit" id="fNV-Q0-VGx">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quitAction:" target="koa-pB-eFf" id="HzH-Sx-Wmb"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="-116" y="10"/>
+        </menu>
+        <customObject id="koa-pB-eFf" customClass="StatusMenuController" customModule="CryptoRate" customModuleProvider="target">
+            <connections>
+                <outlet property="priceView" destination="syI-pA-15A" id="xNe-AD-9tD"/>
+                <outlet property="rateUSD" destination="WX9-fY-pON" id="Thz-5G-1Tu"/>
+                <outlet property="statusMenu" destination="bJB-rU-VDw" id="xXc-4q-R88"/>
+            </connections>
+        </customObject>
+        <customView id="syI-pA-15A" customClass="PriceView" customModule="CryptoRate" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="192" height="112"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yyT-o6-erA">
+                    <rect key="frame" x="54" y="45" width="84" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Last updated" id="b0d-jk-3De">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8X8-If-OAv">
+                    <rect key="frame" x="70" y="20" width="52" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="On date" id="vkN-MS-coR">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1n7-hp-6TC">
+                    <rect key="frame" x="18" y="75" width="156" height="27"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="$$$" id="7NN-hF-6yl">
+                        <font key="font" metaFont="systemBold" size="22"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="yyT-o6-erA" firstAttribute="centerX" secondItem="8X8-If-OAv" secondAttribute="centerX" id="ASF-ad-Qc7"/>
+                <constraint firstItem="yyT-o6-erA" firstAttribute="top" secondItem="syI-pA-15A" secondAttribute="top" constant="50" id="Cyj-1K-1Ma"/>
+                <constraint firstItem="8X8-If-OAv" firstAttribute="centerX" secondItem="1n7-hp-6TC" secondAttribute="centerX" id="DnA-dH-IHY"/>
+                <constraint firstItem="yyT-o6-erA" firstAttribute="centerX" secondItem="syI-pA-15A" secondAttribute="centerX" id="Lpz-jH-NBH"/>
+                <constraint firstItem="1n7-hp-6TC" firstAttribute="leading" secondItem="syI-pA-15A" secondAttribute="leading" constant="20" id="WqY-Qd-a2d"/>
+                <constraint firstItem="yyT-o6-erA" firstAttribute="leading" secondItem="syI-pA-15A" secondAttribute="leading" constant="56" id="bIe-WW-hHW"/>
+                <constraint firstAttribute="bottom" secondItem="1n7-hp-6TC" secondAttribute="bottom" constant="75" id="eXk-fR-Zrq"/>
+                <constraint firstItem="8X8-If-OAv" firstAttribute="top" secondItem="yyT-o6-erA" secondAttribute="bottom" constant="8" symbolic="YES" id="o7p-C5-295"/>
+            </constraints>
+            <connections>
+                <outlet property="lastUpdatedTextField" destination="8X8-If-OAv" id="O8X-OT-EjH"/>
+                <outlet property="priceUSD" destination="1n7-hp-6TC" id="FmV-ol-lp6"/>
+            </connections>
+            <point key="canvasLocation" x="129" y="153"/>
+        </customView>
+    </objects>
+</document>
